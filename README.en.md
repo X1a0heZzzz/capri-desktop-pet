@@ -3,35 +3,48 @@
 [简体中文](README.md) · **[Download latest release](https://github.com/X1a0heZzzz/capri-desktop-pet/releases/latest)**
 
 Six production stages of Capri / 摩羯, preserved as source artwork and three legacy
-8×9 desktop-pet packages: refined anime, pixel chibi and clear chibi.
+8×9 desktop-pet packages: clear chibi (recommended), pixel chibi and refined anime.
 
 ![Clear edition](docs/previews/capri-clear.gif)
 
 ## Start
 
-Download and extract the repository. Open `index.html` locally for an offline,
-interactive nine-state preview. Choose `pets/capri-clear/` for the recommended
-package, `pets/capri-pixel/` for the pixel edition or `pets/capri-anime/` for the
-refined anime edition. Read [installation](docs/INSTALL.md) for host-specific limits.
+Download a package from the latest release, or download and extract the repository.
+Open `index.html` locally for an offline, interactive nine-state preview. Choose
+`pets/capri-clear/` for the recommended package, `pets/capri-pixel/` for the pixel
+edition or `pets/capri-anime/` for the refined anime edition. Read
+[installation](docs/INSTALL.md) for host-specific limits.
 
-The six stages are initial study, rest pose study, refined anime, chibi source art,
-pixel export and clear export. Stages 1, 2 and 4 are design sources, not six separate
-working applications. The renamed clear edition uses the same approved image data.
+| Package | Preview | Notes |
+| --- | --- | --- |
+| **capri-clear** (recommended) | ![](docs/previews/capri-clear.gif) | Chibi source art adapted directly; most hair texture and expression detail |
+| capri-pixel | ![](docs/previews/capri-pixel.gif) | The clear edition reduced to a 48×52 logical grid and a 32-colour palette, shown at 4× |
+| capri-anime | ![](docs/previews/capri-anime.gif) | Refined anime edition with the slender original-style body |
 
 All three sheets are transparent, 1536×1872 pixels, 8 columns × 9 rows with 192×208
 cells, not a newly generated sixteen-direction v2 set.
 
-**v1.1 clear edition.** The recommended package was re-choreographed for the default
-host speed of Codex and Petdex (about one second per loop). Idle is now a calm float with
-breathing and a blink instead of cycling through six unrelated poses; travel rows look and
-lean towards the direction of movement; failed is a startle-droop-kneel-flop collapse;
-waiting is a chin-in-hand daydream. The soft dark smudge and violet rim left by the original
-background removal were cleaned. Every frame still comes from the drawn source poses; the
-only additions are whole-pose bob, lean and squash/stretch, independent hair-shard drift,
-in-place mirroring and closed-eye lines painted over the original eyes. The anime and pixel
-packages keep their v1.0 key-pose choreography, which was designed for slow timings.
+## Motion
+
+All three packages share one choreography, timed for the default host speed of Codex
+and Petdex (about one second per loop): idle is a calm float with breathing and a blink;
+travel rows look and lean towards the direction of movement, with running-left mirrored
+in place; jumping has anticipation, lift and a landing on the same baseline; failed is a
+startle-droop-kneel-flop collapse; waiting is a chin-in-hand daydream; running (work) is a
+busy bob; review is a teasing wink and point.
+
+Every frame comes from the drawn source poses. The only additions are whole-pose bob,
+lean and squash/stretch, independent hair-shard drift, in-place mirroring and closed-eye
+lines painted over the original eyes. The soft dark smudge left by background removal was
+cleaned, and the clear edition's violet rest-pose rim was unified with its dark outline.
+The original slow-timed key-pose packages remain in the
+[v1.0.0 release](https://github.com/X1a0heZzzz/capri-desktop-pet/releases/tag/v1.0.0).
 
 ![All clear-edition states](docs/previews/capri-clear-states.png)
+
+The six stages are initial study, rest pose study, refined anime, chibi source art,
+pixel export and clear export. Stages 1, 2 and 4 are design sources, not six separate
+working applications.
 
 ## Build
 
@@ -46,7 +59,7 @@ python scripts/release.py
 
 Builds go to `dist/rebuilt/`; packaged releases and SHA-256 checksums go to `dist/`.
 No image generation, paid API, installer, host binary or local account state is required.
-See [build notes](docs/BUILD.md) for pixel-source preservation and reproduction limits.
+See [build notes](docs/BUILD.md) for the choreography pipeline and reproduction limits.
 
 Code and documentation: [MIT](LICENSE). Character images and identity are **excluded**
 from MIT; see [ASSET_RIGHTS.md](ASSET_RIGHTS.md). Unofficial, AI-assisted fan art;

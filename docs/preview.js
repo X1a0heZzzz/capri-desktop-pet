@@ -9,7 +9,7 @@
   const reduce = document.getElementById('reduce-motion');
   const speed = document.getElementById('speed');
   const status = document.getElementById('status');
-  const labels = ['发呆 / 休息','向右移动','向左移动','打个招呼','小幅跳动','累了 / 躺下','等待 / 托腮','工作中','观察 / 打趣'];
+  const labels = ['待机 / 呼吸','向右移动','向左移动','打个招呼','小幅跳动','累了 / 躺下','等待 / 托腮','工作中','观察 / 打趣'];
   const caption = ['让她安静地待一会儿。','往右边挪一点。','往左边挪一点。','你好呀。','一点点雀跃。','今天也辛苦了。','等你回来。','陪你把事情做完。','让我再看一眼。'];
   let pet, image, row = 0, col = 0, playing = true, accumulated = 0, previous = 0, request = 0;
   const motionQuery = matchMedia('(prefers-reduced-motion: reduce)');

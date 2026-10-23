@@ -1,13 +1,15 @@
-"""Clear edition v1.1: edge cleanup and host-speed choreography.
+"""v1.1 edge cleanup and host-speed choreography for all three packages.
 
 Every frame is derived from the preserved transparent pose sources. Poses are
 never redrawn; the only additions are whole-pose transforms (bob, lean,
 squash/stretch), independent drift of the detached hair shards, mirrored
 running-left frames, and closed-eye blinks painted over the original eyes.
 Work happens at 3x cell resolution and is downsampled once at the end.
+The pixel edition is the clear edition reduced to its 48x52 logical grid and
+the archived 32-colour palette.
 """
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw
 from scipy import ndimage
 from common import ROOT, read_json
 
@@ -60,12 +62,13 @@ def eye_blobs(image):
     rgba = np.array(image).astype(int)
     r, g, b, a = (rgba[..., i] for i in range(4))
     blue = (b > 150) & (r < 90) & (g < 170) & (a > 200)
-    labels, count = ndimage.label(blue)
+    # Anime irises are concentric rings; join the rings of one eye before counting.
+    labels, count = ndimage.label(ndimage.binary_dilation(blue, iterations=3))
     sizes = ndimage.sum(blue, labels, range(1, count + 1))
-    keep = [i + 1 for i in np.argsort(-sizes)[:2] if sizes[i] > 60]
+    keep = [i + 1 for i in np.argsort(-sizes)[:2] if sizes[i] > 15]
     blobs = []
     for label in keep:
-        ys, xs = np.nonzero(labels == label)
+        ys, xs = np.nonzero((labels == label) & blue)
         blobs.append((xs.mean(), ys.mean(), max(np.ptp(xs), np.ptp(ys)) / 2 + 1))
     return sorted(blobs)
 
@@ -184,10 +187,39 @@ def load_poses(folders, rim_groups):
 
 
 def clear_rows():
-    (rest, expr), frame = load_poses(['chibi-rest-extracted', 'chibi-expressions-extracted'],
-                                     {'chibi-rest-extracted'})
+    return edition_rows('chibi-rest-extracted', 'chibi-expressions-extracted', recolor_rest_rim=True)
+
+
+def anime_rows():
+    # The anime design keeps its purple edge lines, so only the matte smudge is cleaned.
+    return edition_rows('rest-v2-extracted', 'expressions-v2-extracted', recolor_rest_rim=False)
+
+
+def pixel_rows(rows):
+    """Reduce finished frames to the 48x52 logical grid and archived palette, shown at 4x."""
+    palette = np.array([[int(c['hex'][i:i + 2], 16) for i in (1, 3, 5)]
+                        for c in read_json(ROOT / 'sources/pixel/palette.json')['colors']], dtype=np.int32)
+    result = []
+    for row in rows:
+        out = []
+        for frame in row:
+            small = np.array(frame.convert('RGBa').resize((CELL_W // 4, CELL_H // 4), Image.Resampling.BOX)).astype(np.float32)
+            alpha = small[..., 3]
+            rgb = small[..., :3] * 255 / np.maximum(alpha, 1)[..., None]
+            nearest = ((rgb[:, :, None, :] - palette[None, None]) ** 2).sum(-1).argmin(-1)
+            pixels = np.zeros(small.shape, np.uint8)
+            solid = alpha >= 110
+            pixels[solid, :3] = palette[nearest[solid]]
+            pixels[solid, 3] = 255
+            out.append(Image.fromarray(pixels).resize((CELL_W, CELL_H), Image.Resampling.NEAREST))
+        result.append(out)
+    return result
+
+
+def edition_rows(rest_folder, expr_folder, recolor_rest_rim):
+    (rest, expr), frame = load_poses([rest_folder, expr_folder], {rest_folder} if recolor_rest_rim else set())
     pose = lambda item, closed=False: Pose(blink(item[0]) if closed else item[0], *item[1:], frame)
-    # Expression board order follows sources/prompts/chibi-expressions-prompt.txt.
+    # Both expression boards share the order in sources/prompts/chibi-expressions-prompt.txt.
     stand, stand_blink = pose(expr[0]), pose(expr[0], True)
     drift = pose(expr[1])
     effort, effort_blink = pose(expr[2]), pose(expr[2], True)

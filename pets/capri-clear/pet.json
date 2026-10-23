@@ -1,7 +1,7 @@
 {
   "id": "capri-clear",
   "displayName": "摩羯 · Q版清晰原稿",
-  "description": "Capri / 摩羯同人桌宠；AI辅助参考绘制与关键姿态动画。",
+  "description": "Capri / 摩羯同人桌宠；AI辅助参考绘制，按桌面默认速度编排的呼吸、眨眼、移动与休息动作。",
   "spriteVersionNumber": 1,
   "spritesheetPath": "spritesheet.webp"
 }
