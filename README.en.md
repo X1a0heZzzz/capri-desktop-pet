@@ -19,8 +19,19 @@ pixel export and clear export. Stages 1, 2 and 4 are design sources, not six sep
 working applications. The renamed clear edition uses the same approved image data.
 
 All three sheets are transparent, 1536×1872 pixels, 8 columns × 9 rows with 192×208
-cells. They contain key poses and small rigid translations, not motion-interpolated
-video or a newly generated sixteen-direction v2 set. Host playback timings can differ.
+cells, not a newly generated sixteen-direction v2 set.
+
+**v1.1 clear edition.** The recommended package was re-choreographed for the default
+host speed of Codex and Petdex (about one second per loop). Idle is now a calm float with
+breathing and a blink instead of cycling through six unrelated poses; travel rows look and
+lean towards the direction of movement; failed is a startle-droop-kneel-flop collapse;
+waiting is a chin-in-hand daydream. The soft dark smudge and violet rim left by the original
+background removal were cleaned. Every frame still comes from the drawn source poses; the
+only additions are whole-pose bob, lean and squash/stretch, independent hair-shard drift,
+in-place mirroring and closed-eye lines painted over the original eyes. The anime and pixel
+packages keep their v1.0 key-pose choreography, which was designed for slow timings.
+
+![All clear-edition states](docs/previews/capri-clear-states.png)
 
 ## Build
 
@@ -29,6 +40,7 @@ Python 3.12 and `pip install -r requirements.txt`, then:
 ```sh
 python scripts/build.py
 python scripts/validate.py
+python scripts/render_previews.py
 python scripts/release.py
 ```
 

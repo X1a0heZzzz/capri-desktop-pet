@@ -5,6 +5,7 @@ import shutil
 import numpy as np
 from PIL import Image
 from common import ROOT, catalogue, read_json
+from choreography import clear_rows
 from validate import validate
 
 def normalize_groups(folders):
@@ -69,6 +70,13 @@ def assemble(rest, expr, clear):
             sheet.alpha_composite(frame, (col*192,row*208))
     return sheet
 
+def sheet_from_rows(rows):
+    sheet = Image.new('RGBA', (1536,1872))
+    for row, frames in enumerate(rows):
+        for col, frame in enumerate(frames):
+            sheet.alpha_composite(frame, (col*192,row*208))
+    return sheet
+
 def build(output):
     for entry in catalogue()['pets']:
         pet_id = entry['id']
@@ -77,10 +85,10 @@ def build(output):
         if pet_id == 'capri-pixel':
             sheet = Image.open(ROOT / 'sources/pixel/atlas-1x.png').convert('RGBA')
             sheet = sheet.resize((1536,1872), Image.Resampling.NEAREST)
+        elif pet_id == 'capri-clear':
+            sheet = sheet_from_rows(clear_rows())
         else:
-            clear = pet_id == 'capri-clear'
-            names = ['chibi-rest-extracted','chibi-expressions-extracted'] if clear else ['rest-v2-extracted','expressions-v2-extracted']
-            sheet = assemble(*normalize_groups(names), clear=clear)
+            sheet = assemble(*normalize_groups(['rest-v2-extracted','expressions-v2-extracted']), clear=False)
         sheet.save(folder / 'spritesheet.png')
         sheet.save(folder / 'spritesheet.webp', lossless=True, exact=True)
         for name in ['pet.json','animation-manifest.json']:

@@ -9,10 +9,11 @@
   const reduce = document.getElementById('reduce-motion');
   const speed = document.getElementById('speed');
   const status = document.getElementById('status');
-  const labels = ['发呆 / 休息','向右移动','向左移动','打个招呼','小幅跳动','累了 / 躺下','等待 / 打盹','工作中','观察 / 打趣'];
+  const labels = ['发呆 / 休息','向右移动','向左移动','打个招呼','小幅跳动','累了 / 躺下','等待 / 托腮','工作中','观察 / 打趣'];
   const caption = ['让她安静地待一会儿。','往右边挪一点。','往左边挪一点。','你好呀。','一点点雀跃。','今天也辛苦了。','等你回来。','陪你把事情做完。','让我再看一眼。'];
   let pet, image, row = 0, col = 0, playing = true, accumulated = 0, previous = 0, request = 0;
-  reduce.checked = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
+  reduce.checked = motionQuery.matches;
   playing = !reduce.checked;
   function draw() {
     if (!image || !pet) return;
@@ -24,7 +25,7 @@
   function sync() {
     play.textContent = playing ? '暂停播放' : '继续播放';
     play.disabled = reduce.checked;
-    status.textContent = reduce.checked ? '已减少动态效果；仍可选择状态查看首帧。' : (playing ? '按原设计时序播放 · 图集完全来自本地' : '已暂停 · 可选择其他状态');
+    status.textContent = reduce.checked ? '已减少动态效果；仍可选择状态查看首帧。' : (playing ? '按角色包记录的时序播放 · 图集完全来自本地' :'已暂停 · 可选择其他状态');
     [...states.children].forEach((button,index) => button.setAttribute('aria-pressed', String(index === row)));
     document.querySelector('.stage-caption').textContent = caption[row];
     if (pet) canvas.setAttribute('aria-label',`${pet.name}：${labels[row]}`);
@@ -54,6 +55,7 @@
   select.addEventListener('change',loadPet);
   play.addEventListener('click',()=>{playing=!playing;accumulated=0;sync();});
   reduce.addEventListener('change',()=>{playing=!reduce.checked;col=0;accumulated=0;sync();draw();});
+  motionQuery.addEventListener('change',event=>{reduce.checked=event.matches;reduce.dispatchEvent(new Event('change'));});
   speed.addEventListener('input',()=>{document.getElementById('speed-value').textContent=`${Number(speed.value)}×`;});
   document.getElementById('background').addEventListener('click',event=>{
     const active=document.getElementById('stage').classList.toggle('checker');
