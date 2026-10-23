@@ -1,3 +1,7 @@
+《赛博朋克：边缘行者2》（Cyberpunk: Edgerunners 2）中的摩羯 Capri 同人桌宠。
+
+摩羯是与 D 相联系的数字人格构造体；本项目将其粉红碎片头发、几何身体与多变表情改编为桌面伙伴。角色背景与摩羯计划说明（设定剧透）：[角色介绍](https://github.com/X1a0heZzzz/capri-desktop-pet/blob/main/docs/CHARACTER.md)。
+
 全仓库统一：三套桌宠包都按 Codex / Petdex 默认速度重新编排九种动作，清理抠图污边。
 
 - **推荐**：capri-clear，Q版清晰原稿。

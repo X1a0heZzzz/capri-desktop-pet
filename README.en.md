@@ -1,11 +1,27 @@
-# Capri Desktop Pet
+# Cyberpunk: Edgerunners 2 — Capri Desktop Pet
 
 [简体中文](README.md) · **[Download latest release](https://github.com/X1a0heZzzz/capri-desktop-pet/releases/latest)**
 
-Six production stages of Capri / 摩羯, preserved as source artwork and three legacy
+A fan-made desktop companion of **Capri / 摩羯 from Cyberpunk: Edgerunners 2**.
+
+Six production stages, preserved as source artwork and three legacy
 8×9 desktop-pet packages: clear chibi (recommended), pixel chibi and refined anime.
 
 ![Clear edition](docs/previews/capri-clear.gif)
+
+## Meet Capri
+
+**Capri / 摩羯 is the digital personality construct connected to D in Cyberpunk: Edgerunners 2.** The anime takes place in the Night City setting of Cyberpunk 2077 and is produced by CD PROJEKT RED and TRIGGER. [Official series site](https://www.cyberpunk.net/en/edgerunners2)
+
+This fan-made pet adapts her distinctive pink, shard-like hair, dark geometric body and contrasting eye panels into anime and chibi desktop companions. The chibi proportions and resting poses are this project's interpretation, separate from the character's story.
+
+<details><summary>Background: the chip and Project Capricorn (setting spoilers; no ending spoilers)</summary>
+
+Capri is linked to a host through a data chip. D's encounter with her connects his story to Project Capricorn and engram technology. See the [character background and source notes](docs/CHARACTER.md) for context and the distinction between series lore and desktop-pet adaptation.
+
+</details>
+
+Created and maintained by **[X1a0heZzzz](https://github.com/X1a0heZzzz)**. This is an unofficial fan project, not an official character product.
 
 ## Start
 

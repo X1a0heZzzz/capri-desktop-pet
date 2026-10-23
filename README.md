@@ -1,8 +1,10 @@
 <div align="center">
 
-# 摩羯 · Capri Desktop Pet
+# 《赛博朋克：边缘行者2》摩羯 Capri 桌宠
 
-**一只粉红色的小伙伴，六个制作阶段，三套可用桌宠包。**
+**把《赛博朋克：边缘行者2》中的数字人格摩羯 Capri 带到桌面。**
+
+六个制作阶段 · 清晰Q版／像素Q版／动漫版 · 非官方同人项目
 
 [English](README.en.md) · **[下载最新版](https://github.com/X1a0heZzzz/capri-desktop-pet/releases/latest)** · [版本画廊](#六个制作阶段) · [安装说明](docs/INSTALL.md) · [离线预览源码](index.html) · [角色素材说明](ASSET_RIGHTS.md)
 
@@ -18,6 +20,20 @@
 所有帧都来自原稿姿势，没有重新绘制角色。
 
 这是**角色包与制作工具仓库**。桌面悬浮、拖动、置顶和任务状态由 Codex / Petdex 等兼容宿主提供。
+
+## 摩羯 Capri 是谁？
+
+**摩羯（Capri）是《赛博朋克：边缘行者2》（Cyberpunk: Edgerunners 2）中与 D 的故事紧密相连的数字人格构造体。** 剧集发生在《赛博朋克 2077》的夜之城世界观中，由 CD PROJEKT RED 与 TRIGGER 联合制作。[动画官网](https://www.cyberpunk.net/zh-cn/edgerunners2)
+
+粉红色的碎片状头发、黑色几何身体、白色／绿色眼框和蓝色眼睛，是本项目参考角色画面保留的视觉特征。桌宠希望把这位来自夜之城、拥有自身意志的数字角色带到桌面上；Q版比例与休息动作属于本项目的同人演绎。
+
+<details><summary>角色背景：芯片、D 与摩羯计划（含剧情设定剧透，不涉及结局）</summary>
+
+Capri 通过数据芯片与宿主相联系。D 接入芯片后，与这位数字人格建立联系；她的存在牵涉「摩羯计划」（Project Capricorn）及人格印记（engram）技术，而不是普通的桌面助手设定。[背景资料与来源](docs/CHARACTER.md)
+
+</details>
+
+项目由 **[X1a0heZzzz](https://github.com/X1a0heZzzz)** 制作与维护，为非官方同人桌宠；角色背景与新增桌宠动作分别说明。完整介绍见 [角色背景与改编说明](docs/CHARACTER.md)。
 
 ## 直接开始
 
