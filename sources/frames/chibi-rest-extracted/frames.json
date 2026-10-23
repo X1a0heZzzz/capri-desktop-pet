@@ -1,0 +1,88 @@
+{
+  "frames": [
+    {
+      "index": 0,
+      "file": "frames/frame-00.png",
+      "crop_box": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "sheet_origin": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "file": "frames/frame-01.png",
+      "crop_box": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "sheet_origin": [
+        512,
+        0
+      ]
+    },
+    {
+      "index": 2,
+      "file": "frames/frame-02.png",
+      "crop_box": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "sheet_origin": [
+        1024,
+        0
+      ]
+    },
+    {
+      "index": 3,
+      "file": "frames/frame-03.png",
+      "crop_box": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "sheet_origin": [
+        0,
+        512
+      ]
+    },
+    {
+      "index": 4,
+      "file": "frames/frame-04.png",
+      "crop_box": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "sheet_origin": [
+        512,
+        512
+      ]
+    },
+    {
+      "index": 5,
+      "file": "frames/frame-05.png",
+      "crop_box": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "sheet_origin": [
+        1024,
+        512
+      ]
+    }
+  ]
+}

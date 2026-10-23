@@ -1,0 +1,16 @@
+name: Bug / 问题反馈
+description: 报告导入、预览或构建问题
+body:
+  - type: input
+    id: host
+    attributes:
+      label: 宿主 / 系统 / 版本
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 复现步骤、预期与实际结果
+      description: 请勿贴登录态或私人截图。
+    validations:
+      required: true

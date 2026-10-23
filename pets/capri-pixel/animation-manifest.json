@@ -1,0 +1,127 @@
+{
+  "artSource": "host_image",
+  "animationMethod": "drawn key poses plus small rigid translations; no generated video or motion interpolation",
+  "states": [
+    {
+      "row": 0,
+      "state": "idle",
+      "frames": 6,
+      "durationsMs": [
+        4000,
+        700,
+        350,
+        6500,
+        6500,
+        350
+      ]
+    },
+    {
+      "row": 1,
+      "state": "running-right",
+      "frames": 8,
+      "durationsMs": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        150,
+        150,
+        150
+      ]
+    },
+    {
+      "row": 2,
+      "state": "running-left",
+      "frames": 8,
+      "durationsMs": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        150,
+        150,
+        150
+      ]
+    },
+    {
+      "row": 3,
+      "state": "waving",
+      "frames": 4,
+      "durationsMs": [
+        350,
+        450,
+        350,
+        450
+      ]
+    },
+    {
+      "row": 4,
+      "state": "jumping",
+      "frames": 5,
+      "durationsMs": [
+        160,
+        150,
+        150,
+        180,
+        350
+      ]
+    },
+    {
+      "row": 5,
+      "state": "failed",
+      "frames": 8,
+      "durationsMs": [
+        1200,
+        1000,
+        600,
+        400,
+        3000,
+        6000,
+        1800,
+        400
+      ]
+    },
+    {
+      "row": 6,
+      "state": "waiting",
+      "frames": 6,
+      "durationsMs": [
+        2500,
+        2500,
+        4000,
+        5000,
+        3000,
+        2500
+      ]
+    },
+    {
+      "row": 7,
+      "state": "running",
+      "frames": 6,
+      "durationsMs": [
+        450,
+        500,
+        450,
+        500,
+        450,
+        500
+      ]
+    },
+    {
+      "row": 8,
+      "state": "review",
+      "frames": 6,
+      "durationsMs": [
+        350,
+        500,
+        700,
+        350,
+        600,
+        700
+      ]
+    }
+  ],
+  "compatibility": "Legacy 8x9 atlas; 192x208 per cell. Hosts control playback timing and may ignore durationsMs. Not a 16-direction v2 sprite sheet."
+}

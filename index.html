@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>摩羯 · Capri / 六个阶段的桌宠档案</title>
+  <link rel="stylesheet" href="docs/preview.css">
+</head>
+<body>
+  <header class="topbar"><a class="wordmark" href="#">CAPRI<span> / 摩羯</span></a><nav aria-label="主导航"><a href="#playground">动作实验室</a><a href="#archive">版本档案</a><a href="README.md">使用说明 ↗</a></nav><span class="edition">ARCHIVE 001 — 006</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">A SMALL COMPANION, MANY VERSIONS.</p><h1>一点粉红，<br>陪你<span>发呆。</span></h1><div class="intro-note"><span class="signal" aria-hidden="true"></span><p>摩羯的六个制作阶段。<br>从最初的一张角色稿，到桌面角落的清晰小伙伴。</p><a href="#archive">翻阅完整档案 ↓</a></div></section>
+    <section id="playground" class="lab" aria-labelledby="lab-title">
+      <div class="section-head"><h2 id="lab-title"><span>01 /</span> 动作实验室</h2><p>三种造型 · 九种状态 · 离线播放</p></div>
+      <div class="player-grid">
+        <div class="stage" id="stage"><div class="stage-label"><span id="pet-label">Q版清晰原稿</span><span id="frame-label" aria-hidden="true">准备中</span></div><canvas id="pet-canvas" width="384" height="416" role="img" aria-label="摩羯桌宠的动作预览"></canvas><p class="stage-caption">让她安静地待一会儿。</p><span class="crosshair a" aria-hidden="true">+</span><span class="crosshair b" aria-hidden="true">+</span></div>
+        <div class="controls"><label class="field-label" for="pet-select">选择版本 / EDITION</label><select id="pet-select"><option value="capri-clear">⑥ Q版清晰原稿 · 推荐</option><option value="capri-pixel">⑤ Q版像素桌宠</option><option value="capri-anime">③ 动漫细化版</option></select><p class="field-label state-heading">选择状态 / STATE</p><div id="states" class="states" role="group" aria-label="动作状态"></div><div class="playback"><button id="play" type="button">暂停播放</button><button id="background" type="button" aria-pressed="false">透明棋盘</button></div><label class="speed" for="speed">播放速度 <output id="speed-value">1×</output></label><input id="speed" type="range" min="0.25" max="2" value="1" step="0.25"><label class="motion"><input id="reduce-motion" type="checkbox"> 减少动态效果</label><p id="status" class="status" role="status">正在载入本地图集…</p><a id="download" class="download" href="pets/capri-clear/spritesheet.webp" download>下载当前图集 ↗</a><p class="host-note">这是动画预览。桌面悬浮与任务联动由兼容宿主提供。</p></div>
+      </div>
+    </section>
+    <section id="archive" class="archive" aria-labelledby="archive-title"><div class="section-head"><h2 id="archive-title"><span>02 /</span> 六个阶段，一路保留。</h2><p>原稿、细节和每一次改变</p></div><div id="gallery" class="gallery"></div></section>
+    <section class="notes"><p class="eyebrow">MADE WITH CARE. SHARED WITH CONTEXT.</p><h2>把过程也留下。</h2><p>三套角色包、高清原稿、透明切帧与构建工具一起归档。六个制作阶段中，①②④是设计源稿，③⑤⑥可作为角色包使用。</p><p>参考绘制的关键姿态与小幅位移，不是视频补帧。原作角色权利不因本仓库公开而转让。</p><div><a href="docs/INSTALL.md">安装说明 ↗</a><a href="docs/BUILD.md">构建与复现 ↗</a><a href="ASSET_RIGHTS.md">角色素材与权利 ↗</a></div></section>
+  </main>
+  <footer><span>CAPRI / 摩羯 · 2026</span><span>工具 MIT · 角色素材单独说明 · 无网络请求</span></footer>
+  <script src="docs/preview-data.js"></script>
+  <script src="docs/preview.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+{
+  "frames": [
+    {
+      "index": 0,
+      "file": "frames/frame-00.png",
+      "crop_box": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "sheet_origin": [
+        0,
+        -31
+      ]
+    },
+    {
+      "index": 1,
+      "file": "frames/frame-01.png",
+      "crop_box": [
+        418,
+        0,
+        836,
+        418
+      ],
+      "sheet_origin": [
+        418,
+        -31
+      ]
+    },
+    {
+      "index": 2,
+      "file": "frames/frame-02.png",
+      "crop_box": [
+        836,
+        0,
+        1254,
+        418
+      ],
+      "sheet_origin": [
+        836,
+        -31
+      ]
+    },
+    {
+      "index": 3,
+      "file": "frames/frame-03.png",
+      "crop_box": [
+        0,
+        418,
+        418,
+        836
+      ],
+      "sheet_origin": [
+        0,
+        387
+      ]
+    },
+    {
+      "index": 4,
+      "file": "frames/frame-04.png",
+      "crop_box": [
+        418,
+        418,
+        836,
+        836
+      ],
+      "sheet_origin": [
+        418,
+        387
+      ]
+    },
+    {
+      "index": 5,
+      "file": "frames/frame-05.png",
+      "crop_box": [
+        836,
+        418,
+        1254,
+        836
+      ],
+      "sheet_origin": [
+        836,
+        387
+      ]
+    },
+    {
+      "index": 6,
+      "file": "frames/frame-06.png",
+      "crop_box": [
+        0,
+        836,
+        418,
+        1254
+      ],
+      "sheet_origin": [
+        0,
+        805
+      ]
+    },
+    {
+      "index": 7,
+      "file": "frames/frame-07.png",
+      "crop_box": [
+        418,
+        836,
+        836,
+        1254
+      ],
+      "sheet_origin": [
+        418,
+        805
+      ]
+    },
+    {
+      "index": 8,
+      "file": "frames/frame-08.png",
+      "crop_box": [
+        836,
+        836,
+        1254,
+        1254
+      ],
+      "sheet_origin": [
+        836,
+        805
+      ]
+    }
+  ]
+}
